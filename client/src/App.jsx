@@ -8,6 +8,19 @@ export default function App() {
     date:0,
   });
 
+  function handleSubmit(event) {
+    event.preventDafault();
+    setForm({username: "", passowrd:""});
+  }
+  
+  
+  function handleChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
+    setForm({...form, [name]: value})
+  }
+
+
 
 useEffect(() => {
   getGames();
@@ -22,7 +35,7 @@ async function getGames () {
   setGames(data);
 }
 
-async function handlesubmit(event) {
+  async function handleChange(event) {
   event.preventDafault();
   console.log("Form is submitted");
   console.log(form);
@@ -42,13 +55,15 @@ async function handlesubmit(event) {
   getGames();
 }
 
+
+
 return (
   <div>
     <h1> Games for life (Eat, Game, No Sleep)</h1>
     <p> Here are some of my go to games</p>
 
     <h2>Add new Game</h2>
-    <form onSubmit={handlesubmit}>
+    <form onSubmit={handleSubmit}>
       <input 
       name="Name"
       placeholder="Name"
