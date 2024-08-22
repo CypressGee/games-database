@@ -26,7 +26,7 @@ app.post("/games", async function (request, response) {
     const date = request.body.date;
 
     await db.query(
-      `INSERT INTO games (name, publisher, date) VALUES (1,2,3)`,
+      `INSERT INTO games (name, publisher, date) VALUES ($1,$2,$3)`,
       [name,publisher,date]
 
     );
