@@ -29,7 +29,7 @@ export default function App() {
   }
 
   async function handleSubmit(event) {
-    event.preventDafault();
+    event.preventDefault();
     console.log("Form is submitted");
     console.log(form);
 
