@@ -15,7 +15,7 @@ useEffect(() => {
 
 async function getGames () {
   
-  const response = await fetch("http://localhost:8080/games");
+  const response = await fetch("https://games-database-q2av.onrender.com/games");
   
   const data = await response.json();
   
@@ -27,7 +27,7 @@ async function handlesubmit(event) {
   console.log("Form is submitted");
   console.log(form);
   
- await fetch("http://localhost:8080/games", {
+ await fetch("https://games-database-q2av.onrender.com/games", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
