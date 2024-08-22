@@ -8,11 +8,7 @@ export default function App() {
     date:0,
   });
 
-  function handleSubmit(event) {
-    event.preventDafault();
-    setForm({username: "", passowrd:""});
-  }
-  
+ 
   
   function handleChange(event) {
     const name = event.target.name;
